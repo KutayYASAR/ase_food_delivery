@@ -8,7 +8,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: HomePage()
+      home: Scaffold(
+      appBar: AppBar(backgroundColor: Colors.white,),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Anasayfa'),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_bag),label: 'Sepetim'),
+        BottomNavigationBarItem(icon: Icon(Icons.fastfood),label: 'Siparişlerim'),
+      ], unselectedItemColor: Colors.grey[700],
+      selectedItemColor: Colors.amber[800],
+      showUnselectedLabels: true,
+      ),
+      body: HomePage(),
+      )
     );
   }
 }

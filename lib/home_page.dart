@@ -25,17 +25,7 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white,),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Anasayfa'),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_bag),label: 'Sepetim'),
-        BottomNavigationBarItem(icon: Icon(Icons.fastfood),label: 'Siparişlerim'),
-      ], unselectedItemColor: Colors.grey[700],
-      selectedItemColor: Colors.amber[800],
-      showUnselectedLabels: true,
-      ),
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,8 +74,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 
   Wrap horizontalListCard(String restaurantName,String description,String imageURL,String rating) {
