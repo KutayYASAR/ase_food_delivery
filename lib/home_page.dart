@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/restaurant_page.dart';
 
  var restaurantData = [
     ['Mc Donald\'s','Burger - Min. 20TL','https://bit.ly/3CmaCAR','4.2'],
@@ -21,6 +22,10 @@ import 'package:flutter/material.dart';
     ['Pizza','https://bit.ly/2VxDZiW'],
     ['Deniz Ürünleri','https://bit.ly/3CpMP2G'],
       ];
+   AppBar appBarHomePage()
+  {
+    return AppBar(backgroundColor: Colors.white,);
+  }
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
@@ -40,20 +45,17 @@ class HomePage extends StatelessWidget {
                 TextButton(onPressed: (){print(restaurantData);} , child: Text('Tümünü Gör',style: TextStyle(color: Colors.orange),))
               ],
             ),
-            Flexible(
-              flex: 4,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                child: SizedBox(
-                  height: 128,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (BuildContext context, int index) {
-                    return horizontalListCard(restaurantData[index][0],restaurantData[index][1],restaurantData[index][2],restaurantData[index][3]);
-                   },
-                   itemCount: restaurantData.length,
-                  ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+              child: SizedBox(
+                height: 128,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                  return horizontalListCard(restaurantData[index][0],restaurantData[index][1],restaurantData[index][2],restaurantData[index][3]);
+                 },
+                 itemCount: restaurantData.length,
                 ),
               ),
             ),
@@ -61,20 +63,17 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(8, 0, 0, 8),
                   child: Text('Mutfaklar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16)),
                 )),
-            Flexible(
-              flex: 3,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                child: SizedBox(
-                  height: 85,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (BuildContext context, int index) {
-                    return horizontalListCategory(categoryData[index][0],categoryData[index][1]);
-                   },
-                   itemCount: categoryData.length,
-                  ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+              child: SizedBox(
+                height: 85,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                  return horizontalListCategory(categoryData[index][0],categoryData[index][1]);
+                 },
+                 itemCount: categoryData.length,
                 ),
               ),
             ),
@@ -95,17 +94,18 @@ class HomePage extends StatelessWidget {
               thickness: 1,
               height: 1,
             ),
-             Flexible(
-              flex: 15,
-              child: ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) {
-                return verticalListCardBig(restaurantData[index][0],restaurantData[index][1],restaurantData[index][2],restaurantData[index][3]);
-               },
-               itemCount: restaurantData.length
-              ),
-            ),
+             ListView.builder(
+               shrinkWrap: true,
+               physics: NeverScrollableScrollPhysics(),
+               itemBuilder: (BuildContext context, int index) {
+               return InkWell(child: verticalListCardBig(restaurantData[index][0],restaurantData[index][1],restaurantData[index][2],restaurantData[index][3]),
+               onTap:(){
+                 Navigator.push(context, MaterialPageRoute(builder: (context)=> RestaurantPage()));
+               }
+               );
+              },
+              itemCount: restaurantData.length
+             ),
           ],
         ),
       );
@@ -231,4 +231,5 @@ class HomePage extends StatelessWidget {
                 ],
               );
   }
+
 }

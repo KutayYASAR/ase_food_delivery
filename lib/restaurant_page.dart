@@ -10,18 +10,6 @@ class RestaurantPage extends StatelessWidget {
           backgroundColor: Colors.deepOrange,
           elevation: 0,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Anasayfa'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_bag), label: 'Sepetim'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.fastfood), label: 'Siparişlerim'),
-          ],
-          unselectedItemColor: Colors.grey[700],
-          selectedItemColor: Colors.amber[800],
-          showUnselectedLabels: true,
-        ),
         body: SingleChildScrollView(
             child: Column(
           children: [
@@ -55,7 +43,7 @@ class RestaurantPage extends StatelessWidget {
                                           image: NetworkImage(
                                               'https://iasbh.tmgrup.com.tr/4e079c/650/344/0/52/750/447?u=https://isbh.tmgrup.com.tr/sbh/2019/05/31/burger-king-calisma-saatleri-burger-king-saat-kacta-aciliyor-kacta-kapaniyor-1559325837868.jpg'),
                                           height: 100,
-                                          width: 100,
+                                          width: 120,
                                           fit: BoxFit.fill,
                                         ),
                                       ),
