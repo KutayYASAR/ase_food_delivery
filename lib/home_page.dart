@@ -24,7 +24,69 @@ import 'package:food_delivery/restaurant_page.dart';
       ];
    AppBar appBarHomePage()
   {
-    return AppBar(backgroundColor: Colors.white,);
+    return AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 0,right: 15),
+          child: Container(
+            //  padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),   
+              color: Colors.grey[300],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+              child: Material(
+                color: Colors.grey[300],
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Icon(Icons.search,color: Colors.orange),
+                    Expanded(
+                      child: TextField(
+                        // textAlign: TextAlign.center,
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Restoran, ürün veya mutfak ara',
+                          hintStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.grey)
+                        ),
+                        onChanged: (value) {
+
+                        },
+                      ),
+                    ),
+                    InkWell(
+                      child: Icon(Icons.mic,color: Colors.grey,),
+                      onTap: () {
+
+                      },
+                    )
+                  ],
+                ),
+              ),
+            )
+          ),
+        ),
+        actions: [
+          Padding(
+              padding: const EdgeInsets.fromLTRB(10, 9, 30, 9),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),   
+                    color: Colors.grey[300],),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: InkWell(
+                        child: Icon(Icons.filter_list_sharp,color: Colors.grey),
+                        onTap: (){},
+                      ),
+                    ),
+              ),
+            )
+        ],
+        centerTitle: true,
+
+      );
   }
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
