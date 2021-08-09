@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
+  AppBar appBarOrder() {
+    return AppBar(
+      title: Center(child: Text('Siparişlerim', style: TextStyle(color: Colors.black),)) ,
+      backgroundColor: Colors.white,
+
+    );
+  }
+
 class OrderPage extends StatelessWidget {
   const OrderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('Siparişlerim', style: TextStyle(color: Colors.black),)) ,
-        backgroundColor: Colors.white,
-
-      ),
-    body: SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
           Padding(
@@ -35,7 +37,7 @@ class OrderPage extends StatelessWidget {
                         children: [
                           Text('09 Temmuz 2021 / 16:25', style: TextStyle(fontWeight: FontWeight.w500),),
                           Spacer(),
-                          Text('Detaylar >',style: TextStyle(color: Colors.deepOrange),)
+                          Text('Detaylar >',style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.w500),)
                         ],
                       ),
                     ),
@@ -89,10 +91,11 @@ class OrderPage extends StatelessWidget {
           )
         ],
       ),
-    ),
-      
     );
+
   }
+
+
 }
 
 

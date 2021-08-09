@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/home_page.dart';
+import 'package:food_delivery/order_page.dart';
 import 'package:food_delivery/restaurant_page.dart';
 
-import 'order_page.dart';
+
  
 void main() => runApp(MyApp());
  
@@ -33,7 +34,7 @@ class __pageSelectorState extends State<_pageSelector> {
    static List<AppBar> _appbarOptions  = <AppBar>[
     appBarHomePage(),
     appBarHomePage(),
-    appBarHomePage(),
+    appBarOrder(),
 
   ];
   void _onItemTapped(int index)
