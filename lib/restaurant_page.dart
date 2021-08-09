@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 var restaurantData =[
-  ['Burger King', 'Burger', '4.2', '20-30dk', '20 TL', '4.3', '4.2', '4.5', '11.30-22.00']
-
+  ['Burger King', 'Burger', '4.2', '20-30dk', '20 TL', '4.3', '4.2', '4.5', '11.30-22.00', 'https://bit.ly/37tXNpH']
 ];
 
 var itemData = [
@@ -22,7 +20,7 @@ AppBar appBarRestaurantPage()
         elevation: 0.0,
         backgroundColor: Colors.deepOrange,
         title: Padding(
-          padding: const EdgeInsets.only(left: 0,right: 15),
+          padding: const EdgeInsets.only(left: 0,right: 60),
           child: Container(
             //  padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -41,7 +39,7 @@ AppBar appBarRestaurantPage()
                       child: TextField(
                         // textAlign: TextAlign.center,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Restoran, ürün veya mutfak ara',
+                          hintText: 'Yemek Ara',
                           hintStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.grey)
                         ),
                         onChanged: (value) {
@@ -61,25 +59,7 @@ AppBar appBarRestaurantPage()
             )
           ),
         ),
-        actions: [
-          Padding(
-              padding: const EdgeInsets.fromLTRB(10, 9, 30, 9),
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),   
-                    color: Colors.grey[300],),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: InkWell(
-                        child: Icon(Icons.filter_list_sharp,color: Colors.grey),
-                        onTap: (){},
-                      ),
-                    ),
-              ),
-            )
-        ],
         centerTitle: true,
-
   );
 }
 
@@ -102,181 +82,7 @@ class RestaurantPage extends StatelessWidget {
                 Center(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(12, 18, 12, 0),
-                        child: Card(
-                            clipBehavior: Clip.antiAlias,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12)),
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Card(
-                                        clipBehavior: Clip.antiAlias,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5)),
-                                        child: Image(
-                                          image: NetworkImage(
-                                              'https://iasbh.tmgrup.com.tr/4e079c/650/344/0/52/750/447?u=https://isbh.tmgrup.com.tr/sbh/2019/05/31/burger-king-calisma-saatleri-burger-king-saat-kacta-aciliyor-kacta-kapaniyor-1559325837868.jpg'),
-                                          height: 100,
-                                          width: 130,
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Burger King',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 16),
-                                        ),
-                                        Text(
-                                          'Burger',
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              0, 10, 0, 0),
-                                          child: Row(
-                                            children: [
-                                              Card(
-                                                clipBehavior: Clip.antiAlias,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            7)),
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
-                                                          4, 8, 4, 8),
-                                                  child: Row(
-                                                    children: [
-                                                      Icon(
-                                                        Icons.star_rate,
-                                                        size: 14,
-                                                        color: Colors.white,
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                    .fromLTRB(
-                                                                4, 0, 6, 0),
-                                                        child: Text(
-                                                          '4.2',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              color:
-                                                                  Colors.white),
-                                                        ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                                color: Colors.greenAccent[400],
-                                              ),
-                                              Column(
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Icon(
-                                                        Icons
-                                                            .motorcycle_outlined,
-                                                        size: 16,
-                                                      ),
-                                                      Text('  20-30dk  '),
-                                                      Icon(
-                                                        Icons.info_outlined,
-                                                        size: 16,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text('Min Tutar: 20 TL')
-                                                    ],
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Divider(
-                                  thickness: 2,
-                                  indent: 20,
-                                  endIndent: 20,
-                                ),
-                                IntrinsicHeight(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text('Servis: 4.4'),
-                                      const VerticalDivider(
-                                        color: Colors.grey,
-                                        thickness: 1,
-                                      ),
-                                      Text('Lezzet: 4.3'),
-                                      VerticalDivider(
-                                        thickness: 2,
-                                      ),
-                                      Text('Hız: Go '),
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  thickness: 2,
-                                  indent: 20,
-                                  endIndent: 20,
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(16, 5, 16, 10),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(Icons.timer_outlined),
-                                          Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Text('Çalışma Saatleri'),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [Text('11.30-21.30')],
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(Icons.chat_bubble_outline),
-                                          Text('Yorumlar'),
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
-                            )),
-                      ),
+                      restaurantListCardItem(restaurantData[0][0], restaurantData[0][1], restaurantData[0][2], restaurantData[0][3], restaurantData[0][4], restaurantData[0][5], restaurantData[0][6], restaurantData[0][7], restaurantData[0][8], restaurantData[0][9]),
                     ],
                   ),
                 ),
@@ -304,6 +110,190 @@ class RestaurantPage extends StatelessWidget {
         ),
         ),
         );
+  }
+
+  Padding restaurantListCardItem(String restaurantName, restaurantDescription, restaurantRating, restaurantMinTime, restaurantMinPrice, restaurantService, restaurantTaste, restaurantSpeed, restaurantOpenTime, imageURL) {
+    return Padding(
+                      padding: const EdgeInsets.fromLTRB(12, 18, 12, 0),
+                      child: Card(
+                          clipBehavior: Clip.antiAlias,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Card(
+                                      clipBehavior: Clip.antiAlias,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Image(
+                                        image: NetworkImage(
+                                            imageURL),
+                                        height: 100,
+                                        width: 130,
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        restaurantName,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
+                                      ),
+                                      Text(
+                                        restaurantDescription,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            0, 10, 0, 0),
+                                        child: Row(
+                                          children: [
+                                            Card(
+                                              clipBehavior: Clip.antiAlias,
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          7)),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        4, 8, 4, 8),
+                                                child: Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.star_rate,
+                                                      size: 14,
+                                                      color: Colors.white,
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets
+                                                                  .fromLTRB(
+                                                              4, 0, 6, 0),
+                                                      child: Text(
+                                                        restaurantRating,
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600,
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              color: Colors.greenAccent[400],
+                                            ),
+                                            Column(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons
+                                                          .motorcycle_outlined,
+                                                      size: 16,
+                                                    ),
+                                                    Text('  '),
+                                                    Text(restaurantMinTime),
+                                                    Text('  '),
+                                                    Icon(
+                                                      Icons.info_outlined,
+                                                      size: 16,
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text('Min Tutar: '),
+                                                    Text(restaurantMinPrice)
+                                                  ],
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Divider(
+                                thickness: 2,
+                                indent: 20,
+                                endIndent: 20,
+                              ),
+                              IntrinsicHeight(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text('Servis: '),
+                                    Text(restaurantService),
+                                    const VerticalDivider(
+                                      color: Colors.grey,
+                                      thickness: 1,
+                                    ),
+                                    Text('Lezzet: '),
+                                    Text(restaurantTaste),
+                                    VerticalDivider(
+                                      thickness: 2,
+                                    ),
+                                    Text('Hız: '),
+                                    Text(restaurantSpeed),
+                                  ],
+                                ),
+                              ),
+                              Divider(
+                                thickness: 2,
+                                indent: 20,
+                                endIndent: 20,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(16, 5, 16, 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.timer_outlined),
+                                        Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text('Çalışma Saatleri'),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [Text(restaurantOpenTime)],
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.chat_bubble_outline),
+                                        Text('Yorumlar'),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          )),
+                    );
   }
 
   Card horizontalListCardItem(String itemTitle, String itemDescription, String itemPrice, String imageURL) {
