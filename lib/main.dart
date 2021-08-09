@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/home_page.dart';
 import 'package:food_delivery/restaurant_page.dart';
+
+import 'order_page.dart';
  
 void main() => runApp(MyApp());
  
@@ -26,7 +28,7 @@ class __pageSelectorState extends State<_pageSelector> {
   static const List<Widget> _widgetOptions  = <Widget>[
     HomePage(),
     HomePage(),
-    HomePage()
+    OrderPage(),
   ];
    static List<AppBar> _appbarOptions  = <AppBar>[
     appBarHomePage(),
