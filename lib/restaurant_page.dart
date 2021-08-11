@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/add_item_page.dart';
 
 var restaurantData =[
   ['Burger King', 'Burger', '4.2', '20-30dk', '20 TL', '4.3', '4.2', '4.5', '11.30-22.00', 'https://bit.ly/37tXNpH']
@@ -96,8 +97,7 @@ class RestaurantPage extends StatelessWidget {
               itemBuilder: (BuildContext context, int index){
                 return InkWell(child: horizontalListCardItem(itemData[index][0], itemData[index][1], itemData[index][2], itemData[index][3]),
                 onTap:(){
-                  print('Daha oluşmadı moruk nereye');
-                  print(index);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> AddItem()));
                 }
                 );
               },
