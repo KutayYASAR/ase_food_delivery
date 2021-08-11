@@ -1,9 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/restaurant_page.dart';
+
+void createChip (){
+  for (var i = 0; i < ingredientData.length; i++) {
+    FilterChip(
+      backgroundColor: Colors.white,
+      label: Text(ingredientData[0][3]),
+      shape: RoundedRectangleBorder(side: BorderSide()), 
+      onSelected: (bool value) {  },
+    );
+  }
+}
+
+var ingredientData = [
+  ['Göbek Salata', 'Big King Sos', 'Turşu', 'Soğan']
+
+];
 
 var itemData = [
   ['Big King® Menü','Big King® + Büyük Boy Patates + Kutu İçecek','33.50 TL','https://bit.ly/3fLu4xg']
 ];
 
+var otherOptionData = [
+  ['Ekstra Malzeme'],
+  ['Peynir Seçimi'],
+  ['Menü Boyu'],
+  ['Patates Seçimi'],
+  ['içecek Seçimi']
+];
 
 class AddItem extends StatefulWidget {
   const AddItem({ Key? key }) : super(key: key);
@@ -94,29 +118,44 @@ class _AddItemState extends State<AddItem> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
-            child: Card(
-              clipBehavior: Clip.antiAlias,
-              shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(12)
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                child: Row(
-                  children: [
-                    Text('Ekstra Malzeme',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                    )
-                  ],
-                ),
-              ),
+          ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index){
+                return InkWell(child: otherOptionCard(otherOptionData[index][0]),
+                onTap:(){
+                  
+                },
+                );
+              },  
+              itemCount: otherOptionData.length,
             ),
-          )
         ],
       ),
       ) 
     );
+  }
+
+  Padding otherOptionCard(String option) {
+    return Padding(
+          padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+          child: Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.circular(12)
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+              child: Row(
+                children: [
+                  Text(option,
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
   }
 
   Padding itemCard(String itemTitle, String itemDescription, String itemPrice, String imageURL) {
