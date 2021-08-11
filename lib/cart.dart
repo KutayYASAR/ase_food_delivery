@@ -2,6 +2,23 @@ import 'package:flutter/material.dart';
 
 var cartItems = [['1','2'],[]];
 
+  AppBar appBarCart() {
+    var cartLenght = cartItems.length;
+     if (cartItems.any((element) => element.isEmpty)) {
+      return AppBar(
+      title: Center(child: Text('Sepetim', style: TextStyle(color: Colors.black),)) ,
+      backgroundColor: Colors.white
+      );
+     } 
+     else {
+      return AppBar(
+      title: Center(child: Text('Sepetim ($cartLenght)', style: TextStyle(color: Colors.black),)) ,
+      backgroundColor: Colors.white
+      );
+     }
+    
+  }
+
 class Cart extends StatefulWidget {
   Cart({Key? key}) : super(key: key);
 

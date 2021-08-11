@@ -34,7 +34,7 @@ class __pageSelectorState extends State<_pageSelector> {
   ];
    static List<AppBar> _appbarOptions  = <AppBar>[
     appBarHomePage(),
-    appBarHomePage(),
+    appBarCart(),
     appBarOrder(),
 
   ];
