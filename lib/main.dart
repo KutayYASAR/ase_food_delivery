@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/cart.dart';
 import 'package:food_delivery/home_page.dart';
 import 'package:food_delivery/order_page.dart';
-import 'package:food_delivery/restaurant_page.dart';
+
 
 
  
@@ -26,9 +27,9 @@ class _pageSelector extends StatefulWidget {
 
 class __pageSelectorState extends State<_pageSelector> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions  = <Widget>[
+  static  List<Widget> _widgetOptions  = <Widget>[
     HomePage(),
-    HomePage(),
+    Cart(),
     OrderPage(),
   ];
    static List<AppBar> _appbarOptions  = <AppBar>[
