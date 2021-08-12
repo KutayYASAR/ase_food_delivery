@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/home_page.dart';
 
-var cartItems = [['1','2']];
+var cartItems = [['Ekstra Kıtır Dürüm','20.80']];
 
   AppBar appBarCart() {
     var cartLenght = cartItems.length;
@@ -63,9 +64,16 @@ class _CartState extends State<Cart> {
             child: Column(
               children: [
                 Expanded(
-                  child: ListView(
-                    children: [listItem()],
-                        ),
+                  child: ListView.builder(
+                    itemCount: cartItems.length+1,
+                    itemBuilder: (BuildContext context, int index) {
+                    if (index == 0) {
+                      return listTopCard(restaurantData[0]);
+                    } else {
+                      return listItem();
+                    }
+                   },
+                  ),
                 ),
               ],
             )
@@ -73,8 +81,60 @@ class _CartState extends State<Cart> {
     }  
   }
 
-
 }
+
+Card listTopCard(List<String> rData)
+{
+  return Card(child: 
+    Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            child: Image(
+              image: NetworkImage(rData[2]),
+              height: 60,
+              width: 60,
+              fit: BoxFit.fill,
+            ),
+
+          ),
+        )
+        ,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom:8.0,left: 3),
+              child: Text(rData[0],style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15,color: Colors.grey.shade800),),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:3.0),
+              child: Row(
+                children: [
+                  Card(child: Row(children: [Icon(Icons.star_rate, size: 14,color: Colors.white,),Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 0, 6, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text(rData[3],style:TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),
+                    ),
+                  )],), color: Colors.greenAccent[400],),
+                            Icon(Icons.motorcycle),
+                            Text(rData[1])
+
+                ],
+              ),
+            )
+
+          ],
+        )
+      ],
+    )
+  );
+}
+
 class listItem extends StatefulWidget {
   listItem({Key? key}) : super(key: key);
 
@@ -95,39 +155,42 @@ class _listItemState extends State<listItem> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Ekstra Kıtır Dürüm'),
+                Text(cartItems[0][0],style: TextStyle(color: Colors.grey.shade800,fontWeight: FontWeight.w700),),
                 Padding(
                   padding: const EdgeInsets.only(top:8.0),
-                  child: Text('20.80 TL'),
+                  child: Text('${cartItems[0][1]} TL',style: TextStyle(color: Colors.amber[800],fontWeight: FontWeight.w700,fontSize: 15),),
                 )
               ],
             ),
             Card(
               clipBehavior: Clip.antiAlias,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-              child:  Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                   SizedBox(
-                     width: 34,
-                     height: 34,
-                     child: IconButton(padding: EdgeInsets.only(right: 18),icon: Icon(Icons.remove,size: 18),onPressed: (){
-                       setState(() {
-                         _itemCount--;
-                       });
+              child:  Padding(
+                padding: const EdgeInsets.only(left:10,right: 10),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                     SizedBox(
+                       width: 34,
+                       height: 34,
+                       child: IconButton(padding: EdgeInsets.only(right: 18),icon: Icon(Icons.remove,size: 20,color: Colors.amber[800]),onPressed: (){
+                         setState(() {
+                           _itemCount--;
+                         });
+                       }),
+                     ),
+                      Text(_itemCount.toString(),style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
+                      SizedBox(
+                        width: 34,
+                        height: 34,
+                        child: IconButton(padding: EdgeInsets.only(left: 18),icon: Icon(Icons.add,size: 20,color: Colors.amber[800]),onPressed: (){
+                         setState(() {
+                           _itemCount++;
+                         });
                      }),
-                   ),
-                    Text(_itemCount.toString()),
-                    SizedBox(
-                      width: 34,
-                      height: 34,
-                      child: IconButton(padding: EdgeInsets.only(left: 18),icon: Icon(Icons.add,size: 18,),onPressed: (){
-                       setState(() {
-                         _itemCount++;
-                       });
-                   }),
-                    )
-                ],
+                      )
+                  ],
+                ),
               ),
             ),
           ],
