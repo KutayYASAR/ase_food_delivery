@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/restaurant_page.dart';
 
-void createChip (){
-  for (var i = 0; i < ingredientData.length; i++) {
-    FilterChip(
+
+List<FilterChip> createChip (){
+  List<FilterChip> chipItems = [];
+    
+    for (var i = 0; i < ingredientData.length-1; i++) {
+      var newItem = FilterChip(
       backgroundColor: Colors.white,
-      label: Text(ingredientData[0][3]),
+      label: Text(ingredientData[i]),
       shape: RoundedRectangleBorder(side: BorderSide()), 
-      onSelected: (bool value) {  },
+      onSelected: (bool value) {
+        print(i);
+      },
     );
-  }
+    chipItems.add(newItem);
+    }
+  return chipItems;
 }
 
 var ingredientData = [
-  ['Göbek Salata', 'Big King Sos', 'Turşu', 'Soğan']
-
+  'Göbek Salata', 
+  'Big King Sos', 
+  'Turşu', 
+  'Soğan'
 ];
 
 var itemData = [
@@ -37,6 +45,7 @@ class AddItem extends StatefulWidget {
 }
 
 class _AddItemState extends State<AddItem> {
+  
 
   String dropdownValue = '1';
 
@@ -102,15 +111,11 @@ class _AddItemState extends State<AddItem> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        OutlinedButton(onPressed: (){}, child: Text('Göbek Salata', style: TextStyle(color: Colors.black87),)),
-                        OutlinedButton(onPressed: (){}, child: Text('Big King Sos', style: TextStyle(color: Colors.black87),)),
-                        OutlinedButton(onPressed: (){}, child: Text('Tursu', style: TextStyle(color: Colors.black87),)),
-                      ],
+                      children: createChip(),
                     ),
                     Row(
                       children: [
-                        OutlinedButton(onPressed: (){}, child: Text('Soğan', style: TextStyle(color: Colors.black87),)),
+
                       ],
                     )
                   ],
