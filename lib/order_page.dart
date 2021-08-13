@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/details_page.dart';
 
 List orderinfos=[
 ['Oses Çiğ Köfte','09 Temmuz 2021','16:25','30.50'],
 ['Burger King','18 Temmuz 2021','16:56','24.90']
 ];
 
-  AppBar appBarOrder() {
+AppBar appBarOrder() {
     return AppBar(
       title: Center(child: Text('Siparişlerim', style: TextStyle(color: Colors.black),)) ,
       backgroundColor: Colors.white,
@@ -24,7 +25,11 @@ class OrderPage extends StatelessWidget {
           shrinkWrap:true,
           itemCount: orderinfos.length,
           itemBuilder: (BuildContext context, int index) {
-          return orderCard(orderinfos[index][0],orderinfos[index][1],orderinfos[index][2],orderinfos[index][3]);
+          return InkWell(child: orderCard(orderinfos[index][0],orderinfos[index][1],orderinfos[index][2],orderinfos[index][3]),
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsPage()));
+          },
+          );
          },
         ),
       ],
