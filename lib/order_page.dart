@@ -27,11 +27,11 @@ class OrderPage extends StatelessWidget {
           itemCount: orderinfos.length,
           itemBuilder: (BuildContext context, int index) {
 
-          return InkWell(child: orderCard(orderinfos[index][0],orderinfos[index][1],orderinfos[index][2],orderinfos[index][3]),
+          return InkWell(child: orderCard(context,orderinfos[index][0],orderinfos[index][1],orderinfos[index][2],orderinfos[index][3]),
           onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsPage()));
           },
-          )
+          );
          },
         ),
       ],
