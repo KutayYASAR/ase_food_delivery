@@ -155,7 +155,11 @@ class _AddItemState extends State<AddItem> {
                 children: [
                   Text(option,
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                  )
+                  ),
+                  Spacer(),
+                  Icon(Icons.expand_more,
+                  color: Colors.deepOrange,
+                  ),
                 ],
               ),
             ),
