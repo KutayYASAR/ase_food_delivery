@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/order_rating_page.dart';
 import 'package:food_delivery/details_page.dart';
 
 List orderinfos=[
@@ -25,19 +26,19 @@ class OrderPage extends StatelessWidget {
           shrinkWrap:true,
           itemCount: orderinfos.length,
           itemBuilder: (BuildContext context, int index) {
+
           return InkWell(child: orderCard(orderinfos[index][0],orderinfos[index][1],orderinfos[index][2],orderinfos[index][3]),
           onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsPage()));
           },
-          );
+          )
          },
         ),
       ],
     );
-
   }
 
-  Padding orderCard(String restaurantName,String orderDate,String orderTime,String totalPrice) {
+  Padding orderCard(BuildContext context, String restaurantName,String orderDate,String orderTime,String totalPrice,) {
     return Padding(
           padding: const EdgeInsets.fromLTRB(10,8,10,0),
           child: Card(
@@ -46,7 +47,6 @@ class OrderPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(12),
               child: Column(
-                
                 children: [
                   Row(
                     children: [
@@ -96,7 +96,11 @@ class OrderPage extends StatelessWidget {
                     
                     Padding(
                       padding: const EdgeInsets.only(left:5),
-                      child: OutlinedButton.icon(onPressed: (){}, icon: Padding(
+                      child: OutlinedButton.icon(
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> OrderRating()));
+                        }
+                        , icon: Padding(
                         padding: const EdgeInsets.only(left:10),
                         child: Icon(Icons.star, color: Colors.deepOrange,),
                       ), label: Padding(
