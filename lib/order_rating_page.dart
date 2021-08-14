@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 var restaurantCardData = [
-  'Oses Çiğköfte',
+  'Oses Çiğköfte (Siyavuşpaşa Mah)',
   '4.2',
   '4.0',  //Servis
   '4.1',  //Lezzet
@@ -147,11 +147,43 @@ class _OrderRating extends State<OrderRating> {
                         direction: Axis.horizontal,
                         allowHalfRating: false,
                         itemCount: 5,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => Icon(
-                         Icons.star,
-                         color: Colors.amber,
-                        ),
+                        itemSize: 50,
+                        unratedColor: Colors.grey[400],
+                        itemPadding: EdgeInsets.symmetric(horizontal: 6.0),
+                        itemBuilder: (context, index) {
+                          switch (index) {
+                            case 0:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.red,
+                              );
+                            case 1:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.redAccent,
+                              );
+                            case 2:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.amber,
+                              );
+                            case 3:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.lightGreen,
+                              );
+                            case 4:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.green,
+                              );
+                            default:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.orangeAccent,
+                              );
+                          }
+                        },
                         onRatingUpdate: (ratingService) {
                           print(ratingService);
                         },
@@ -174,11 +206,43 @@ class _OrderRating extends State<OrderRating> {
                         direction: Axis.horizontal,
                         allowHalfRating: false,
                         itemCount: 5,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => Icon(
-                         Icons.star,
-                         color: Colors.amber,
-                        ),
+                        itemSize: 50,
+                        unratedColor: Colors.grey[400],
+                        itemPadding: EdgeInsets.symmetric(horizontal: 6.0),
+                        itemBuilder: (context, index) {
+                          switch (index) {
+                            case 0:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.red,
+                              );
+                            case 1:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.redAccent,
+                              );
+                            case 2:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.amber,
+                              );
+                            case 3:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.lightGreen,
+                              );
+                            case 4:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.green,
+                              );
+                            default:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.orangeAccent,
+                              );
+                          }
+                        },
                         onRatingUpdate: (ratingTaste) {
                           print(ratingTaste);
                         },
@@ -201,11 +265,43 @@ class _OrderRating extends State<OrderRating> {
                         direction: Axis.horizontal,
                         allowHalfRating: false,
                         itemCount: 5,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => Icon(
-                         Icons.star,
-                         color: Colors.amber,
-                        ),
+                        itemSize: 50,
+                        unratedColor: Colors.grey[400],
+                        itemPadding: EdgeInsets.symmetric(horizontal: 6.0),
+                        itemBuilder: (context, index) {
+                          switch (index) {
+                            case 0:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.red,
+                              );
+                            case 1:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.redAccent,
+                              );
+                            case 2:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.amber,
+                              );
+                            case 3:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.lightGreen,
+                              );
+                            case 4:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.green,
+                              );
+                            default:
+                              return Icon(
+                              Icons.star_rounded,
+                              color: Colors.orangeAccent,
+                              );
+                          }
+                        },
                         onRatingUpdate: (ratingSpeed) {
                           print(ratingSpeed);
                         },
@@ -248,7 +344,7 @@ class _OrderRating extends State<OrderRating> {
                           child: Row(
                             children: [
                             Icon(
-                              Icons.star_rate,
+                              Icons.star_rounded,
                               size: 23,
                               color: Colors.white,
                             ),
@@ -271,17 +367,26 @@ class _OrderRating extends State<OrderRating> {
                           children: [
                             Row(
                               children: [
-                                Text('Servis'),
+                                Text('Servis:',
+                                style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
                             ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8, bottom: 8),
+                              child: Row(
+                                children: [
+                                  Text('Lezzet:',
+                                style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                              ),
                             ),
                             Row(
                               children: [
-                                Text('Lezzet'),
-                            ],
-                            ),
-                            Row(
-                              children: [
-                                Text('Hız'),
+                                Text('Hız:',
+                                style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
                             ],
                             ),
                           ],
@@ -295,13 +400,14 @@ class _OrderRating extends State<OrderRating> {
                                 RatingBarIndicator(
                                 rating: serviceValue,
                                 itemBuilder: (context, index) => Icon(
-                                     Icons.star,
-                                     color: Colors.amber,
+                                     Icons.star_rounded,
+                                     color: Colors.orange[700],
                                 ),
                                 itemCount: 5,
-                                itemSize: 20.0,
+                                itemSize: 25.0,
+                                itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
                                 ),
-                                Text(service),
+                                Text('   $service', style: TextStyle(color: Colors.orange[700], fontWeight: FontWeight.bold, fontSize: 15),),
                               ],
                             ),
                             Row(
@@ -309,13 +415,14 @@ class _OrderRating extends State<OrderRating> {
                                 RatingBarIndicator(
                                 rating: tasteValue,
                                 itemBuilder: (context, index) => Icon(
-                                     Icons.star,
-                                     color: Colors.amber,
+                                     Icons.star_rounded,
+                                     color: Colors.orange[700],
                                 ),
                                 itemCount: 5,
-                                itemSize: 20.0,
+                                itemSize: 25.0,
+                                itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
                                 ),
-                                Text(taste),
+                                Text('   $taste', style: TextStyle(color: Colors.orange[700], fontWeight: FontWeight.bold, fontSize: 15),),
                               ],
                             ),
                             Row(
@@ -323,13 +430,14 @@ class _OrderRating extends State<OrderRating> {
                                 RatingBarIndicator(
                                 rating: speedValue,
                                 itemBuilder: (context, index) => Icon(
-                                     Icons.star,
-                                     color: Colors.amber,
+                                     Icons.star_rounded,
+                                     color: Colors.orange[700],
                                 ),
                                 itemCount: 5,
-                                itemSize: 20.0,
+                                itemSize: 25.0,
+                                itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
                                 ),
-                                Text(speed),
+                                Text('   $speed', style: TextStyle(color: Colors.orange[700], fontWeight: FontWeight.bold, fontSize: 15),),
                               ],
                             )
                           ],
@@ -342,7 +450,7 @@ class _OrderRating extends State<OrderRating> {
                     mainAxisAlignment:
                       MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(Icons.star,),
+                      Icon(Icons.star_rounded, color: Colors.grey.shade600,),
                       Text('$evaluation Değerlendirme '),
                       VerticalDivider(
                         thickness: 2,
