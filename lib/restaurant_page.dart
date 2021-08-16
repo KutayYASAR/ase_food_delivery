@@ -237,19 +237,31 @@ class RestaurantPage extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text('Servis: '),
-                                    Text(restaurantService),
+                                    Row(
+                                      children: [
+                                        Text('Servis: ',style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
+                                        Text(restaurantService, style: TextStyle(fontSize: 15, color: Colors.amber[900], fontWeight: FontWeight.w600),),
+                                      ],
+                                    ),
                                     const VerticalDivider(
                                       color: Colors.grey,
                                       thickness: 1,
                                     ),
-                                    Text('Lezzet: '),
-                                    Text(restaurantTaste),
+                                    Row(
+                                      children: [
+                                        Text('Lezzet: ',style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
+                                        Text(restaurantTaste, style: TextStyle(fontSize: 15, color: Colors.amber[900], fontWeight: FontWeight.w600),),
+                                      ],
+                                    ),
                                     VerticalDivider(
                                       thickness: 2,
                                     ),
-                                    Text('Hız: '),
-                                    Text(restaurantSpeed),
+                                    Row(
+                                      children: [
+                                        Text('Hız: ',style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),),
+                                        Text(restaurantSpeed, style: TextStyle(fontSize: 15, color: Colors.amber[900], fontWeight: FontWeight.w600),),
+                                      ],
+                                    )
                                   ],
                                 ),
                               ),
@@ -267,16 +279,19 @@ class RestaurantPage extends StatelessWidget {
                                   children: [
                                     Row(
                                       children: [
-                                        Icon(Icons.timer_outlined),
+                                        Icon(Icons.timer_outlined, color: Colors.amber[900], size: 20,),
                                         Column(
                                           children: [
-                                            Row(
-                                              children: [
-                                                Text('Çalışma Saatleri'),
-                                              ],
+                                            Padding(
+                                              padding: const EdgeInsets.only(bottom: 3),
+                                              child: Row(
+                                                children: [
+                                                  Text('Çalışma Saatleri', style: TextStyle(fontSize: 10),),
+                                                ],
+                                              ),
                                             ),
                                             Row(
-                                              children: [Text(restaurantOpenTime)],
+                                              children: [Text(restaurantOpenTime, style: TextStyle(fontWeight: FontWeight.w600),)],
                                             )
                                           ],
                                         )
@@ -284,8 +299,8 @@ class RestaurantPage extends StatelessWidget {
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.chat_bubble_outline),
-                                        Text('Yorumlar'),
+                                        Icon(Icons.chat_bubble_outline, color: Colors.amber[900], size: 20,),
+                                        Text('Yorumlar', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),),
                                       ],
                                     )
                                   ],
@@ -313,7 +328,11 @@ class RestaurantPage extends StatelessWidget {
                 SizedBox(height: 4),
                 SizedBox(
                   width: 250,
-                  child: Text(itemDescription),
+                  child: Text(itemDescription,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                  ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 7), 

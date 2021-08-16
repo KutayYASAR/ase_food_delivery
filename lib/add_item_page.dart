@@ -1,28 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-List<FilterChip> createChip (){
-  List<FilterChip> chipItems = [];
-    
-    for (var i = 0; i < ingredientData.length-1; i++) {
-      var newItem = FilterChip(
-      backgroundColor: Colors.white,
-      label: Text(ingredientData[i]),
-      shape: RoundedRectangleBorder(side: BorderSide()), 
-      onSelected: (bool value) {
-        print(i);
-      },
-    );
-    chipItems.add(newItem);
-    }
-  return chipItems;
-}
-
 var ingredientData = [
   'Göbek Salata', 
   'Big King Sos', 
   'Turşu', 
-  'Soğan'
+  'Soğan',
+  'Mayonez'
 ];
 
 var itemData = [
@@ -42,10 +26,40 @@ class AddItem extends StatefulWidget {
 
   @override
   _AddItemState createState() => _AddItemState();
+
+
+  
 }
 
 class _AddItemState extends State<AddItem> {
-  
+
+
+List<FilterChip> createChip(){
+  List<FilterChip> chipItems = [];
+
+  var _isSelected = false;
+
+    for (var i = 0; i < ingredientData.length; i++) {
+      var newItem = FilterChip(
+      backgroundColor: Colors.white,
+      selected: _isSelected,
+      label: Text(ingredientData[i]),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(7),
+        side: BorderSide(),
+      ),
+      
+      onSelected: (isSelected) {
+        setState(() {
+          _isSelected = !_isSelected;
+        });
+      },
+    );
+    chipItems.add(newItem);
+    }
+  return chipItems;
+}
+
 
   String dropdownValue = '1';
 
@@ -109,32 +123,33 @@ class _AddItemState extends State<AddItem> {
                         Text('Lütfen çıkarmak istediğiniz malzemeleri seçiniz',),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: createChip(),
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: Wrap(
+                          spacing: 20,
+                          children: createChip(),
+                        ),
+                      ),
                     ),
-                    Row(
-                      children: [
-
-                      ],
-                    )
                   ],
                 ),
               ),
             ),
           ),
           ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index){
-                return InkWell(child: otherOptionCard(otherOptionData[index][0]),
-                onTap:(){
-                  
-                },
-                );
-              },  
-              itemCount: otherOptionData.length,
-            ),
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (BuildContext context, int index){
+              return InkWell(child: otherOptionCard(otherOptionData[index][0]),
+              onTap:(){
+                
+              },
+              );
+            },  
+            itemCount: otherOptionData.length,
+          ),
         ],
       ),
       ) 
