@@ -60,7 +60,7 @@ class _OrderRating extends State<OrderRating> {
                   style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0)),
-                    backgroundColor: Colors.deepOrange,
+                    backgroundColor: Colors.amber[900],
                     minimumSize: Size(width-20,35),
                   )
                   )
@@ -401,13 +401,13 @@ class _OrderRating extends State<OrderRating> {
                                 rating: serviceValue,
                                 itemBuilder: (context, index) => Icon(
                                      Icons.star_rounded,
-                                     color: Colors.orange[700],
+                                     color: Colors.amber[900],
                                 ),
                                 itemCount: 5,
                                 itemSize: 25.0,
                                 itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
                                 ),
-                                Text('   $service', style: TextStyle(color: Colors.orange[700], fontWeight: FontWeight.bold, fontSize: 15),),
+                                Text('   $service', style: TextStyle(color: Colors.amber[900], fontWeight: FontWeight.bold, fontSize: 15),),
                               ],
                             ),
                             Row(
@@ -416,13 +416,13 @@ class _OrderRating extends State<OrderRating> {
                                 rating: tasteValue,
                                 itemBuilder: (context, index) => Icon(
                                      Icons.star_rounded,
-                                     color: Colors.orange[700],
+                                     color: Colors.amber[900],
                                 ),
                                 itemCount: 5,
                                 itemSize: 25.0,
                                 itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
                                 ),
-                                Text('   $taste', style: TextStyle(color: Colors.orange[700], fontWeight: FontWeight.bold, fontSize: 15),),
+                                Text('   $taste', style: TextStyle(color: Colors.amber[900], fontWeight: FontWeight.bold, fontSize: 15),),
                               ],
                             ),
                             Row(
@@ -431,13 +431,13 @@ class _OrderRating extends State<OrderRating> {
                                 rating: speedValue,
                                 itemBuilder: (context, index) => Icon(
                                      Icons.star_rounded,
-                                     color: Colors.orange[700],
+                                     color: Colors.amber[900],
                                 ),
                                 itemCount: 5,
                                 itemSize: 25.0,
                                 itemPadding: EdgeInsets.symmetric(horizontal: 3.0),
                                 ),
-                                Text('   $speed', style: TextStyle(color: Colors.orange[700], fontWeight: FontWeight.bold, fontSize: 15),),
+                                Text('   $speed', style: TextStyle(color: Colors.amber[900], fontWeight: FontWeight.bold, fontSize: 15),),
                               ],
                             )
                           ],
@@ -450,13 +450,21 @@ class _OrderRating extends State<OrderRating> {
                     mainAxisAlignment:
                       MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(Icons.star_rounded, color: Colors.grey.shade600,),
-                      Text('$evaluation Değerlendirme '),
+                      Row(
+                        children: [
+                          Icon(Icons.star_rounded, color: Colors.grey.shade600,),
+                          Text(' $evaluation Değerlendirme'),
+                        ],
+                      ),
                       VerticalDivider(
                         thickness: 2,
                       ),
-                      Icon(Icons.chat_bubble_outline),
-                      Text('$comment Yorum'),
+                      Row(
+                        children: [
+                          Icon(Icons.chat_bubble_outline),
+                          Text(' $comment Yorum    '),
+                        ],
+                      )
                     ],
                   ),
                 ),
