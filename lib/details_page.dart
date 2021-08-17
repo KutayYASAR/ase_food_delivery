@@ -59,7 +59,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   children: [
                     Row(
                       children: [
-                        Text('$deliveryInfo',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color: Colors.deepOrange),)
+                        Text('$deliveryInfo',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color: Colors.amber[900]),)
                       ],
                     ),
                     Padding(
@@ -196,7 +196,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('Adet: $itemPiece'),
-                          Text('$itemPrice TL',style: TextStyle(color: Colors.deepOrange,fontSize: 17, fontWeight: FontWeight.bold)),
+                          Text('$itemPrice TL',style: TextStyle(color: Colors.amber[900],fontSize: 17, fontWeight: FontWeight.bold)),
                         ],
                       ),
                       Divider(
@@ -276,12 +276,12 @@ class _DetailsPageState extends State<DetailsPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Icon(Icons.repeat,color: Colors.deepOrange,),
+                          Icon(Icons.repeat,color: Colors.amber[900],),
                           Text('Tekrarla',style: TextStyle(fontSize: 14,fontWeight:FontWeight.w600)),
                           VerticalDivider(
                             thickness: 2,
                           ),
-                          Icon(Icons.star,color: Colors.deepOrange,),
+                          Icon(Icons.star,color: Colors.amber[900],),
                           Text('Değerlendir',style: TextStyle(fontSize: 14,fontWeight:FontWeight.w600)),
                         ],
                       ),
