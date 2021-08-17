@@ -3,8 +3,8 @@ import 'package:food_delivery/order_rating_page.dart';
 import 'package:food_delivery/details_page.dart';
 
 List orderinfos=[
-['Oses Çiğ Köfte','09 Temmuz 2021','16:25','30.50'],
-['Burger King','18 Temmuz 2021','16:56','24.90']
+['Burger King','18 Temmuz 2021','16:56','24.90'],
+['Oses Çiğ Köfte','09 Temmuz 2021','16:25','30.50']
 ];
 
 AppBar appBarOrder() {
@@ -26,7 +26,7 @@ class OrderPage extends StatelessWidget {
           shrinkWrap:true,
           itemCount: orderinfos.length,
           itemBuilder: (BuildContext context, int index) {
-
+            
           return InkWell(child: orderCard(context,orderinfos[index][0],orderinfos[index][1],orderinfos[index][2],orderinfos[index][3]),
           onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsPage()));
@@ -59,14 +59,14 @@ class OrderPage extends StatelessWidget {
                       children: [
                         Text('$orderDate / $orderTime', style: TextStyle(fontWeight: FontWeight.w500),),
                         Spacer(),
-                        Text('Detaylar >',style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.w500),)
+                        Text('Detaylar >',style: TextStyle(color: Colors.amber[900],fontWeight: FontWeight.w500),)
                       ],
                     ),
                   ),
                   Row(
                     children: [
                       Text('Toplam:',style: TextStyle(fontWeight: FontWeight.w500,color: Colors.grey.shade700),),
-                      Text(' $totalPrice TL',style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.w500),)
+                      Text(' $totalPrice TL',style: TextStyle(color: Colors.amber[900],fontWeight: FontWeight.w500),)
                     ],
                   ),
                   Padding(
@@ -87,7 +87,7 @@ class OrderPage extends StatelessWidget {
                       padding: const EdgeInsets.only(right:5),
                       child: OutlinedButton.icon(onPressed: (){}, icon: Padding(
                         padding: const EdgeInsets.only(left:10),
-                        child: Icon(Icons.repeat, color: Colors.deepOrange,),
+                        child: Icon(Icons.repeat, color: Colors.amber[900],),
                       ), label: Padding(
                         padding: const EdgeInsets.only(right:10),
                         child: Text('Tekrarla',style: TextStyle(color: Colors.black),),
@@ -102,7 +102,7 @@ class OrderPage extends StatelessWidget {
                         }
                         , icon: Padding(
                         padding: const EdgeInsets.only(left:10),
-                        child: Icon(Icons.star, color: Colors.deepOrange,),
+                        child: Icon(Icons.star, color: Colors.amber[900],),
                       ), label: Padding(
                         padding: const EdgeInsets.only(right:10),
                         child: Text('Değerlendir',style: TextStyle(color: Colors.black)),
