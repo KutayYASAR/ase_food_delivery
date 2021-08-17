@@ -299,8 +299,8 @@ class RestaurantPage extends StatelessWidget {
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.chat_bubble_outline, color: Colors.amber[900], size: 20,),
-                                        Text('Yorumlar', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),),
+                                        
+                                        TextButton.icon(onPressed: (){}, icon: Icon(Icons.chat_bubble_outline, color: Colors.amber[900], size: 20,), label: Text('Yorumlar', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),),style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.black)),)
                                       ],
                                     )
                                   ],
@@ -341,10 +341,12 @@ class RestaurantPage extends StatelessWidget {
                       Icon(Icons.add_box,
                       color: Colors.amber[900],
                       ),
-                    Text(itemPrice,
+                    Text(' $itemPrice',
                     style: TextStyle(
                       color: Colors.amber[900],
-                      fontWeight: FontWeight.bold
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15
+       
                       ),),
                     ],
                   ),

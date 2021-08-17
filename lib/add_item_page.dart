@@ -67,6 +67,9 @@ List<FilterChip> createChip(){
 
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -74,7 +77,7 @@ List<FilterChip> createChip(){
        padding: const EdgeInsets.only(right: 60),
        child: Center(child: Text('Burger King', style: TextStyle(color: Colors.white),)),
      ) ,
-    backgroundColor: Colors.deepOrange,
+    backgroundColor: Colors.amber[900],
       ),
       body: SingleChildScrollView(
       child: Column(
@@ -83,12 +86,12 @@ List<FilterChip> createChip(){
             children: [
               Container(
                 height: 120,
-                color: Colors.deepOrange,
+                color: Colors.amber[900],
               ),
               Center(
                 child: Column(
                   children: [
-                    itemCard(itemData[0][0], itemData[0][1], itemData[0][2], itemData[0][3])
+                    itemCard(itemData[0][0], itemData[0][1], itemData[0][2], itemData[0][3], width)
                   ],
                 ),
               )
@@ -173,7 +176,7 @@ List<FilterChip> createChip(){
                   ),
                   Spacer(),
                   Icon(Icons.expand_more,
-                  color: Colors.deepOrange,
+                  color: Colors.amber[900],
                   ),
                 ],
               ),
@@ -182,7 +185,7 @@ List<FilterChip> createChip(){
         );
   }
 
-  Padding itemCard(String itemTitle, String itemDescription, String itemPrice, String imageURL) {
+  Padding itemCard(String itemTitle, String itemDescription, String itemPrice, String imageURL, double width) {
     return Padding(
                     padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                     child: Card(
@@ -198,7 +201,7 @@ List<FilterChip> createChip(){
                             height: 200,
                           ),
                           SizedBox(
-                            width: 250,
+                            width: width-150,
                             child: Row(
                               children: [
                                 Expanded(
@@ -213,7 +216,7 @@ List<FilterChip> createChip(){
                           Padding(
                             padding: const EdgeInsets.only(top: 15),
                             child: SizedBox(
-                              width: 300,
+                              width: width-150,
                               child: Row(
                                 children: [
                                   Expanded(
@@ -248,7 +251,7 @@ List<FilterChip> createChip(){
                               Padding(
                                 padding: const EdgeInsets.only(right: 20),
                                 child: Text(itemPrice,
-                                style: TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold, fontSize: 16),
+                                style: TextStyle(color: Colors.amber[900], fontWeight: FontWeight.bold, fontSize: 16),
                                 ),
                               ),
                             ],
