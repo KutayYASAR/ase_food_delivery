@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/home_page.dart';
 
 var cartItems = [['Ekstra Kıtır Dürüm','20.80']];
+double cartTotal = 0;
 
   AppBar appBarCart() {
     var cartLenght = cartItems.length;
+    //for empty cart
      if (cartItems.any((element) => element.isEmpty)) {
       return AppBar(
       title: Center(child: Text('Sepetim', style: TextStyle(color: Colors.black),)) ,
@@ -52,7 +54,7 @@ class _CartState extends State<Cart> {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0))
                     ),
-                    backgroundColor: MaterialStateProperty.all(Colors.amber[800])
+                    backgroundColor: MaterialStateProperty.all(Colors.amber[900])
                   )
                   ,)),
                 )
@@ -62,6 +64,7 @@ class _CartState extends State<Cart> {
     } else {
           return Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: ListView.builder(
@@ -75,6 +78,44 @@ class _CartState extends State<Cart> {
                    },
                   ),
                 ),
+                Card(
+                  elevation: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 3),
+                              child: Text('Toplam',style: TextStyle(fontWeight: FontWeight.w700,color: Colors.grey[600]),),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top:3),
+                              child: Text('20.80 TL',style: TextStyle(fontWeight: FontWeight.w800,color: Colors.amber[900],fontSize: 16)), //interaktif değil değiştirilmesi gerekli ?
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: SizedBox(height: 45, child: ElevatedButton(onPressed: (){}, 
+                          child: Text('Siparişi Tamamla',
+                            style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18)),
+                          style: 
+                            ButtonStyle(
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0))
+                          ),
+                          backgroundColor: MaterialStateProperty.all(Colors.amber[900])
+                            )
+                           ,)),
+                        )
+                    ],
+                  ),
+                )
               ],
             )
           );
@@ -146,6 +187,10 @@ class _listItemState extends State<listItem> {
   int _itemCount = 1;
   @override
   Widget build(BuildContext context) {
+    if(_itemCount == 0)
+    {
+      return Card();
+    }
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -158,7 +203,7 @@ class _listItemState extends State<listItem> {
                 Text(cartItems[0][0],style: TextStyle(color: Colors.grey.shade800,fontWeight: FontWeight.w700),),
                 Padding(
                   padding: const EdgeInsets.only(top:8.0),
-                  child: Text('${cartItems[0][1]} TL',style: TextStyle(color: Colors.amber[800],fontWeight: FontWeight.w700,fontSize: 15),),
+                  child: Text('${(double.parse(cartItems[0][1])*_itemCount).toStringAsFixed(2)} TL',style: TextStyle(color: Colors.amber[900],fontWeight: FontWeight.w700,fontSize: 15),),
                 )
               ],
             ),
@@ -173,7 +218,7 @@ class _listItemState extends State<listItem> {
                      SizedBox(
                        width: 34,
                        height: 34,
-                       child: IconButton(padding: EdgeInsets.only(right: 18),icon: Icon(Icons.remove,size: 20,color: Colors.amber[800]),onPressed: (){
+                       child: IconButton(padding: EdgeInsets.only(right: 18),icon: Icon(Icons.remove,size: 20,color: Colors.amber[900]),onPressed: (){
                          setState(() {
                            _itemCount--;
                          });
@@ -183,7 +228,7 @@ class _listItemState extends State<listItem> {
                       SizedBox(
                         width: 34,
                         height: 34,
-                        child: IconButton(padding: EdgeInsets.only(left: 18),icon: Icon(Icons.add,size: 20,color: Colors.amber[800]),onPressed: (){
+                        child: IconButton(padding: EdgeInsets.only(left: 18),icon: Icon(Icons.add,size: 20,color: Colors.amber[900]),onPressed: (){
                          setState(() {
                            _itemCount++;
                          });
