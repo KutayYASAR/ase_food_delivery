@@ -56,7 +56,7 @@ class __pageSelectorState extends State<_pageSelector> {
         BottomNavigationBarItem(icon: Icon(Icons.fastfood),label: 'Siparişlerim'),
       ],
       unselectedItemColor: Colors.grey[700],
-      selectedItemColor: Colors.amber[800],
+      selectedItemColor: Colors.amber[900],
       showUnselectedLabels: true,
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,

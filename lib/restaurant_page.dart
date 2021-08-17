@@ -346,6 +346,7 @@ class RestaurantPage extends StatelessWidget {
                       color: Colors.amber[900],
                       fontWeight: FontWeight.bold,
                       fontSize: 15
+       
                       ),),
                     ],
                   ),
