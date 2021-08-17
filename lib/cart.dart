@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:food_delivery/home_page.dart';
 
@@ -7,6 +6,7 @@ double cartTotal = 0;
 
   AppBar appBarCart() {
     var cartLenght = cartItems.length;
+    //for empty cart
      if (cartItems.any((element) => element.isEmpty)) {
       return AppBar(
       title: Center(child: Text('Sepetim', style: TextStyle(color: Colors.black),)) ,

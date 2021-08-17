@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
                   child: Text('Kampanyalı Restoranlar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
                 ),
-                TextButton(onPressed: (){print(restaurantData);} , child: Text('Tümünü Gör',style: TextStyle(color: Colors.orange),))
+                TextButton(onPressed: (){print(restaurantData);} , child: Text('Tümünü Gör',style: TextStyle(color: Colors.amber[900]),))
               ],
             ),
             Padding(
@@ -115,7 +115,11 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                  return horizontalListCard(restaurantData[index][0],restaurantData[index][1],restaurantData[index][2],restaurantData[index][3]);
+                  return InkWell(child: horizontalListCard(restaurantData[index][0],restaurantData[index][1],restaurantData[index][2],restaurantData[index][3]),
+                  onTap:(){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> RestaurantPage()));
+                  }
+                  );
                  },
                  itemCount: restaurantData.length,
                 ),
@@ -148,7 +152,7 @@ class HomePage extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(8, 0, 0, 8),
                         child: Text('Restoranlar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),textAlign: TextAlign.center,),
                       )),
-                    TextButton.icon(onPressed: (){}, icon: Icon(Icons.format_list_bulleted,size: 16,), label: Text('Filtrele'),style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.orange)),)
+                    TextButton.icon(onPressed: (){}, icon: Icon(Icons.format_list_bulleted,size: 16,), label: Text('Filtrele'),style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.amber[900])),)
                 ],
               ),
             ),

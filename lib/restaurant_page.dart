@@ -19,7 +19,7 @@ AppBar appBarRestaurantPage()
 {
   return AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.amber[900],
         title: Padding(
           padding: const EdgeInsets.only(left: 0,right: 60),
           child: Container(
@@ -35,7 +35,7 @@ AppBar appBarRestaurantPage()
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Icon(Icons.search,color: Colors.orange),
+                    Icon(Icons.search,color: Colors.amber[900]),
                     Expanded(
                       child: TextField(
                         // textAlign: TextAlign.center,
@@ -78,7 +78,7 @@ class RestaurantPage extends StatelessWidget {
               children: [
                 Container(
                   height: 160,
-                  color: Colors.deepOrange,
+                  color: Colors.amber[900],
                 ),
                 Center(
                   child: Column(
@@ -339,11 +339,11 @@ class RestaurantPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Icon(Icons.add_box,
-                      color: Colors.deepOrange,
+                      color: Colors.amber[900],
                       ),
                     Text(itemPrice,
                     style: TextStyle(
-                      color: Colors.deepOrange,
+                      color: Colors.amber[900],
                       fontWeight: FontWeight.bold
                       ),),
                     ],
