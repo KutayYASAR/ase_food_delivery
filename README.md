@@ -11,7 +11,7 @@ Staj kapsamında 3 kişilik bir grup halinde hazırladığımız yemek sipariş 
 
 ## Uygulama Videosu
 
-![Uygulama Videosu](https://i.imgur.com/ac3Jm12.mp4)
+![Uygulama Videosu](https://i.imgur.com/xMdtwSv.mp4)
  
 ## Ekran Görüntüleri
 
