@@ -44,5 +44,4 @@ Staj kapsamında 3 kişilik bir grup halinde hazırladığımız yemek sipariş 
 
 
 
-
-  
+![Uygulama Videosu](https://i.imgur.com/0Im2z0a.mp4)
