@@ -9,7 +9,10 @@ Staj kapsamında 3 kişilik bir grup halinde hazırladığımız yemek sipariş 
 - [@Kutay Yaşar](https://github.com/KutayYASAR)
 - [@Semih Yılmaz](https://github.com/SemihYlmaz)
 
-  
+## Uygulama Videosu
+
+https://i.imgur.com/xMdtwSv.mp4
+ 
 ## Ekran Görüntüleri
 
 ![Uygulama Ekran Görüntüsü](https://i.imgur.com/FRFFr90.png)
@@ -41,8 +44,3 @@ Staj kapsamında 3 kişilik bir grup halinde hazırladığımız yemek sipariş 
 
 
 ![Uygulama Ekran Görüntüsü](https://i.imgur.com/kIFjpnH.png)
-
-
-
-
-  
