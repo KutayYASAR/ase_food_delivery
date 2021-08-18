@@ -1,16 +1,40 @@
-# food_delivery
 
-A new Flutter project.
+# Flutter Yemek Sipariş Uygulaması
 
-## Getting Started
+Staj kapsamında 3 kişilik bir grup halinde hazırladığımız yemek sipariş uygulamasıdır
 
-This project is a starting point for a Flutter application.
+## Geliştiriciler
 
-A few resources to get you started if this is your first Flutter project:
+- [@Eren Vural](https://github.com/ErenVural-Proje)
+- [@Kutay Yaşar](https://github.com/KutayYASAR)
+- [@Semih Yılmaz](https://github.com/SemihYlmaz)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  
+## Ekran Görüntüleri
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/BKl1miN.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/0kubfJQ.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/kh82Z7c.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/R19HlaS.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/2MmcOci.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/PYS74Qk.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/AyfqH6r.png)
+
+
+![Uygulama Ekran Görüntüsü](https://i.imgur.com/9HVj3Fd.png)
+
+
+
+  
